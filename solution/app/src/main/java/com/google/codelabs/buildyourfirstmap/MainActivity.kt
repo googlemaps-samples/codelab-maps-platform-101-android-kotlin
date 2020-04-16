@@ -14,7 +14,6 @@
 
 package com.google.codelabs.buildyourfirstmap
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
