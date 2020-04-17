@@ -57,14 +57,16 @@ class MainActivity : AppCompatActivity() {
      * Adds markers to the map with clustering support.
      */
     private fun addClusteredMarkers(googleMap: GoogleMap) {
+        // Create the ClusterManager class and set the custom renderer
         val clusterManager = ClusterManager<Place>(this, googleMap)
-        googleMap.setOnCameraIdleListener(clusterManager)
         clusterManager.renderer =
             PlaceRenderer(
                 this,
                 googleMap,
                 clusterManager
             )
+
+        // Add the places to the ClusterManager
         clusterManager.addItems(places)
         clusterManager.cluster()
 
@@ -80,50 +82,57 @@ class MainActivity : AppCompatActivity() {
             clusterManager.clusterMarkerCollection.markers.forEach { it.alpha = 0.3f }
         }
 
-        // When the camera stops moving, change the alpha value back to opaque
         googleMap.setOnCameraIdleListener {
+            // When the camera stops moving, change the alpha value back to opaque
             clusterManager.markerCollection.markers.forEach { it.alpha = 1.0f }
             clusterManager.clusterMarkerCollection.markers.forEach { it.alpha = 1.0f }
+
+            // Call clusterManager.onCameraIdle() when the camera stops moving so that re-clustering
+            // can be performed when the camera stops moving
             clusterManager.onCameraIdle()
         }
     }
+}
 
-    private var circle: Circle? = null
+private var circle: Circle? = null
 
-    /**
-     * Adds a [Circle] around the provided [item]
-     */
-    private fun addCircle(googleMap: GoogleMap, item: Place) {
-        circle?.remove()
-        circle = googleMap.addCircle(
-            CircleOptions()
-                .center(item.latLng)
-                .radius(1000.0)
-                .fillColor(ContextCompat.getColor(this, R.color.colorPrimaryTranslucent))
-                .strokeColor(ContextCompat.getColor(this, R.color.colorPrimary))
+/**
+ * Adds a [Circle] around the provided [item]
+ */
+private fun addCircle(googleMap: GoogleMap, item: Place) {
+    circle?.remove()
+    circle = googleMap.addCircle(
+        CircleOptions()
+            .center(item.latLng)
+            .radius(1000.0)
+            .fillColor(ContextCompat.getColor(this, R.color.colorPrimaryTranslucent))
+            .strokeColor(ContextCompat.getColor(this, R.color.colorPrimary))
+    )
+}
+
+private val bicycleIcon: BitmapDescriptor by lazy {
+    val color = ContextCompat.getColor(this, R.color.colorPrimary)
+    BitmapHelper.vectorToBitmap(this, R.drawable.ic_directions_bike_black_24dp, color)
+}
+
+/**
+ * Adds markers to the map. These markers won't be clustered.
+ */
+private fun addMarkers(googleMap: GoogleMap) {
+    places.forEach { place ->
+        val marker = googleMap.addMarker(
+            MarkerOptions()
+                .title(place.name)
+                .position(place.latLng)
+                .icon(bicycleIcon)
         )
+        // Set place as the tag on the marker object so it can be referenced within
+        // MarkerInfoWindowAdapter
+        marker.tag = place
     }
+}
 
-    /**
-     * Adds markers to the map. These markers won't be clustered.
-     */
-    private fun addMarkers(googleMap: GoogleMap) {
-        val color = ContextCompat.getColor(this, R.color.colorPrimary)
-        val bicycleIcon = BitmapHelper.vectorToBitmap(this, R.drawable.ic_directions_bike_black_24dp, color)
-        places.forEach { place ->
-            val marker = googleMap.addMarker(
-                MarkerOptions()
-                    .title(place.name)
-                    .position(place.latLng)
-                    .icon(bicycleIcon)
-            )
-            // Set place as the tag on the marker object so it can be referenced within
-            // MarkerInfoWindowAdapter
-            marker.tag = place
-        }
-    }
-
-    companion object {
-        val TAG = MainActivity::class.java.simpleName
-    }
+companion object {
+    val TAG = MainActivity::class.java.simpleName
+}
 }
