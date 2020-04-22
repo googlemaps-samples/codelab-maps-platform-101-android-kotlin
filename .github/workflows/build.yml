@@ -52,7 +52,7 @@ jobs:
           uses: actions/upload-artifact@v1
           with:
             name: build-reports
-            path: app/build/reports
+            path: starter/app/build/reports
 
     build-solution:
         runs-on: ubuntu-latest
@@ -79,4 +79,4 @@ jobs:
           uses: actions/upload-artifact@v1
           with:
             name: build-reports
-            path: app/build/reports
+            path: solution/app/build/reports
