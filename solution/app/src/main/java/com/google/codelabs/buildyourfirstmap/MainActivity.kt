@@ -92,47 +92,46 @@ class MainActivity : AppCompatActivity() {
             clusterManager.onCameraIdle()
         }
     }
-}
 
-private var circle: Circle? = null
+    private var circle: Circle? = null
 
-/**
- * Adds a [Circle] around the provided [item]
- */
-private fun addCircle(googleMap: GoogleMap, item: Place) {
-    circle?.remove()
-    circle = googleMap.addCircle(
-        CircleOptions()
-            .center(item.latLng)
-            .radius(1000.0)
-            .fillColor(ContextCompat.getColor(this, R.color.colorPrimaryTranslucent))
-            .strokeColor(ContextCompat.getColor(this, R.color.colorPrimary))
-    )
-}
-
-private val bicycleIcon: BitmapDescriptor by lazy {
-    val color = ContextCompat.getColor(this, R.color.colorPrimary)
-    BitmapHelper.vectorToBitmap(this, R.drawable.ic_directions_bike_black_24dp, color)
-}
-
-/**
- * Adds markers to the map. These markers won't be clustered.
- */
-private fun addMarkers(googleMap: GoogleMap) {
-    places.forEach { place ->
-        val marker = googleMap.addMarker(
-            MarkerOptions()
-                .title(place.name)
-                .position(place.latLng)
-                .icon(bicycleIcon)
+    /**
+     * Adds a [Circle] around the provided [item]
+     */
+    private fun addCircle(googleMap: GoogleMap, item: Place) {
+        circle?.remove()
+        circle = googleMap.addCircle(
+            CircleOptions()
+                .center(item.latLng)
+                .radius(1000.0)
+                .fillColor(ContextCompat.getColor(this, R.color.colorPrimaryTranslucent))
+                .strokeColor(ContextCompat.getColor(this, R.color.colorPrimary))
         )
-        // Set place as the tag on the marker object so it can be referenced within
-        // MarkerInfoWindowAdapter
-        marker.tag = place
     }
-}
 
-companion object {
-    val TAG = MainActivity::class.java.simpleName
-}
+    private val bicycleIcon: BitmapDescriptor by lazy {
+        val color = ContextCompat.getColor(this, R.color.colorPrimary)
+        BitmapHelper.vectorToBitmap(this, R.drawable.ic_directions_bike_black_24dp, color)
+    }
+
+    /**
+     * Adds markers to the map. These markers won't be clustered.
+     */
+    private fun addMarkers(googleMap: GoogleMap) {
+        places.forEach { place ->
+            val marker = googleMap.addMarker(
+                MarkerOptions()
+                    .title(place.name)
+                    .position(place.latLng)
+                    .icon(bicycleIcon)
+            )
+            // Set place as the tag on the marker object so it can be referenced within
+            // MarkerInfoWindowAdapter
+            marker.tag = place
+        }
+    }
+
+    companion object {
+        val TAG = MainActivity::class.java.simpleName
+    }
 }
