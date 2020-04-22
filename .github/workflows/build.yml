@@ -45,7 +45,7 @@ jobs:
         - name: Build and check
           run: |
               cd starter
-              ./gradlew assembleDebug assembleDebugAndroidTest app:lintDebug
+              ./gradlew assembleDebug app:lintDebug
 
         - name: Upload build reports
           if: always()
@@ -72,7 +72,7 @@ jobs:
         - name: Build and check
           run: |
               cd solution
-              ./gradlew assembleDebug assembleDebugAndroidTest app:lintDebug
+              ./gradlew assembleDebug app:lintDebug
 
         - name: Upload build reports
           if: always()
