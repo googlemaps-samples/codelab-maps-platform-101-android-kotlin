@@ -106,4 +106,4 @@ jobs:
           uses: actions/upload-artifact@v1
           with:
             name: build-reports
-            path: solution/app/build/reports
+            path: solution-ktx/app/build/reports
