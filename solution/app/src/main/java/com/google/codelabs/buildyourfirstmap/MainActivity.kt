@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             addClusteredMarkers(googleMap)
 
             // Set custom info window adapter
-            googleMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))
+            // googleMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))
         }
     }
 
@@ -65,6 +65,9 @@ class MainActivity : AppCompatActivity() {
                 googleMap,
                 clusterManager
             )
+
+        // Set custom info window adapter
+        clusterManager.markerCollection.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))
 
         // Add the places to the ClusterManager
         clusterManager.addItems(places)
