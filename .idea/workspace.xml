@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e3ab7ec8-1de7-4136-ae10-379c52ff8556" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/solution-ktx/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/solution-ktx/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution-ktx/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/solution-ktx/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution-ktx/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/solution-ktx/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/solution/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/solution/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solution/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/solution/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/starter/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starter/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/starter/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1uJt55CSwuWzgYtPuZkpmyjlQfD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3ab7ec8-1de7-4136-ae10-379c52ff8556" name="Default Changelist" comment="" />
+      <created>1624395332581</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624395332581</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="505" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1624395495685">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state x="505" y="252" width="670" height="676" key="search.everywhere.popup/-2560.-252.2560.1415/0.25.1680.1025@0.25.1680.1025" timestamp="1624395495685" />
+  </component>
+</project>
