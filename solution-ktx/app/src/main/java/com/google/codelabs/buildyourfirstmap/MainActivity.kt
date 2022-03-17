@@ -139,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             }
             // Set place as the tag on the marker object so it can be referenced within
             // MarkerInfoWindowAdapter
-            marker.tag = place
+            marker?.tag = place
         }
     }
     // [END maps_android_add_map_codelab_ktx_add_markers]
